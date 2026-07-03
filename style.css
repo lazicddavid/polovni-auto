@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #0d2137;
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #e8a020;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #0d2137 60%, #1a3a5c 100%);
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.hero p {
+    color: #aac4e0;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat strong {
+    font-size: 1.8rem;
+    color: #e8a020;
+}
+
+.stat span {
+    font-size: 0.85rem;
+    color: #aac4e0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* AUTOMOBILI SEKCIJA */
+.automobili-sekcija {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.sekcija-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e8a020;
+    padding-bottom: 0.5rem;
+}
+
+.sekcija-header h2 {
+    font-size: 1.5rem;
+    color: #0d2137;
+}
+
+/* GRID */
+.automobili-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* KARTICA */
+.auto-kartica {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auto-kartica:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.auto-kartica img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.auto-info {
+    padding: 1rem;
+}
+
+.auto-naslov {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0d2137;
+    margin-bottom: 0.4rem;
+}
+
+.auto-cena {
+    font-size: 1.3rem;
+    color: #e8a020;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.auto-detalji {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.chip {
+    background: #f0f4f8;
+    border-radius: 4px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.78rem;
+    color: #555;
+}
+
+/* FOOTER */
+.footer {
+    background: #0d2137;
+    color: #778899;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 1.5rem; }
+    .stats { gap: 1.5rem; }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polovni Automobil - Kupovina i prodaja automobila</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">&#128663; Polovni Automobil</div>
+        <div class="nav-links">
+            <a href="#">Oglasi</a>
+            <a href="#">Prodaj auto</a>
+            <a href="#">Kontakt</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pronađite vaš savršen automobil</h1>
+            <p>Hiljade proverenih oglasa na jednom mestu</p>
+            <div class="stats">
+                <div class="stat"><strong id="brOglasa">0</strong><span>oglasa</span></div>
+                <div class="stat"><strong>20</strong><span>marki</span></div>
+                <div class="stat"><strong>100</strong><span>modela</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="automobili-sekcija">
+        <div class="sekcija-header">
+            <h2>Najnoviji oglasi</h2>
+        </div>
+        <div class="automobili-grid" id="automobili">
+            <!-- POCETAK_AUTOMOBILA -->
+            <!-- KRAJ_AUTOMOBILA -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&#169; 2026 Polovni Automobil. Sva prava zadrzana.</p>
+    </footer>
+
+    <script>
+        var br = document.querySelectorAll('.auto-kartica').length;
+        document.getElementById('brOglasa').textContent = br;
+    </script>
+</body>
+</html>
