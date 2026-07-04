@@ -148,19 +148,30 @@ function napraviKarticu(auto) {
     var cena     = rand(auto.cena[0],auto.cena[1]);
     var kmFmt    = km.toLocaleString('de-DE');
     var cenaFmt  = cena.toLocaleString('de-DE');
+    var cenaRsd  = (cena * 117).toLocaleString('de-DE');
+    var gradovi  = ['Beograd', 'Novi Sad', 'Niš', 'Kragujevac', 'Subotica', 'Zrenjanin', 'Pančevo', 'Čačak', 'Kraljevo', 'Leskovac'];
+    var grad     = gradovi[rand(0, gradovi.length - 1)];
+    var danaPre  = rand(1, 14);
+
     return (
-        '<div class="auto-kartica">\n' +
-        '  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">' + auto.marka + '</span></div>\n' +
-        '  <div class="auto-info">\n' +
-        '    <div class="auto-naslov">' + auto.marka + ' ' + auto.model + '</div>\n' +
-        '    <div class="auto-cena">' + cenaFmt + ' &euro;</div>\n' +
-        '    <div class="auto-detalji">\n' +
-        '      <span class="chip">&#128197; ' + godiste + '</span>\n' +
-        '      <span class="chip">&#128204; ' + kmFmt + ' km</span>\n' +
-        '      <span class="chip">&#9981; '   + auto.gorivo  + '</span>\n' +
-        '      <span class="chip">&#9881; '   + auto.mjenjac + '</span>\n' +
-        '      <span class="chip">&#127912; ' + auto.boja    + '</span>\n' +
+        '<div class="oglas-kartica">\n' +
+        '  <div class="oglas-slika">&#128663;<div class="oglas-slika-marka">' + auto.marka + '</div></div>\n' +
+        '  <div class="oglas-info">\n' +
+        '    <div class="oglas-naslov">' + auto.marka + ' ' + auto.model + ' ' + godiste + '</div>\n' +
+        '    <div class="oglas-specs">' + godiste + ' · ' + kmFmt + ' km · ' + auto.gorivo + ' · ' + auto.mjenjac + '</div>\n' +
+        '    <div class="oglas-chips">\n' +
+        '      <span class="chip">' + auto.gorivo + '</span>\n' +
+        '      <span class="chip">' + auto.mjenjac + '</span>\n' +
+        '      <span class="chip">' + auto.boja + '</span>\n' +
         '    </div>\n' +
+        '    <div class="oglas-lokacija">&#128205; ' + grad + ' &nbsp;&middot;&nbsp; pre ' + danaPre + ' dana</div>\n' +
+        '  </div>\n' +
+        '  <div class="oglas-cena-wrap">\n' +
+        '    <div>\n' +
+        '      <div class="oglas-cena">' + cenaFmt + ' &euro;</div>\n' +
+        '      <div class="oglas-cena-rsd">' + cenaRsd + ' RSD</div>\n' +
+        '    </div>\n' +
+        '    <button class="oglas-btn">Pogledaj</button>\n' +
         '  </div>\n' +
         '</div>\n'
     );
@@ -170,7 +181,7 @@ function dodajAuto(auto) {
     var html    = fs.readFileSync(HTML, 'utf8');
     var kartica = napraviKarticu(auto);
     html = html.replace('<!-- KRAJ_AUTOMOBILA -->', kartica + '            <!-- KRAJ_AUTOMOBILA -->');
-    var brOglasa = (html.match(/auto-kartica/g) || []).length;
+    var brOglasa = (html.match(/oglas-kartica/g) || []).length;
     html = html.replace(/id="brOglasa">\d+/, 'id="brOglasa">' + brOglasa);
     fs.writeFileSync(HTML, html);
 }

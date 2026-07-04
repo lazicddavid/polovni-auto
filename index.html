@@ -8,169 +8,136 @@
 </head>
 <body>
 
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <span>Besplatno oglašavanje</span>
+        <span class="sep">|</span>
+        <span>Kontakt</span>
+        <span class="sep">|</span>
+        <span>Prijava / Registracija</span>
+    </div>
+
+    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">&#128663; Polovni Automobil</div>
+        <div class="logo">&#128663; <span>Polovni</span>Automobil</div>
         <div class="nav-links">
-            <a href="#">Oglasi</a>
-            <a href="#">Prodaj auto</a>
-            <a href="#">Kontakt</a>
+            <a href="#" class="active">Automobili</a>
+            <a href="#">Motocikli</a>
+            <a href="#">Kamioni</a>
+            <a href="#">Delovi</a>
         </div>
+        <button class="btn-oglas">+ Dodaj oglas</button>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Pronađite vaš savršen automobil</h1>
-            <p>Proverite i pronađite pravo vozilo</p>
-            <div class="stats">
-                <div class="stat"><strong id="brOglasa">10</strong><span>oglasa</span></div>
-                <div class="stat"><strong>20</strong><span>marki</span></div>
-                <div class="stat"><strong>100</strong><span>modela</span></div>
+    <!-- PRETRAGA -->
+    <section class="pretraga">
+        <div class="pretraga-wrap">
+            <h2>Pronađi automobil</h2>
+            <div class="pretraga-forma">
+                <select><option>Marka</option><option>VW</option><option>BMW</option><option>Mercedes</option></select>
+                <select><option>Model</option></select>
+                <select><option>Gorivo</option><option>Dizel</option><option>Benzin</option><option>Hibrid</option></select>
+                <select><option>Cena do</option><option>5.000 €</option><option>10.000 €</option><option>20.000 €</option></select>
+                <select><option>Godište od</option><option>2010</option><option>2015</option><option>2020</option></select>
+                <button class="btn-trazi">&#128269; Pretraži</button>
             </div>
         </div>
     </section>
 
-    <section class="automobili-sekcija">
-        <div class="sekcija-header">
-            <h2>Najnoviji oglasi</h2>
-        </div>
-        <div class="automobili-grid" id="automobili">
-            <!-- POCETAK_AUTOMOBILA -->
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Ford</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Ford Focus 3</div>
-    <div class="auto-cena">7.098 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2015</span>
-      <span class="chip">&#128204; 118.489 km</span>
-      <span class="chip">&#9981; Dizel</span>
-      <span class="chip">&#9881; Manuelni</span>
-      <span class="chip">&#127912; Bela</span>
+    <!-- MAIN CONTENT -->
+    <div class="content-wrap">
+
+        <!-- SIDEBAR FILTER -->
+        <aside class="sidebar">
+            <div class="filter-box">
+                <h3>Filteri</h3>
+                <label>Marka</label>
+                <select><option>Sve marke</option></select>
+                <label>Model</label>
+                <select><option>Svi modeli</option></select>
+                <label>Cena (EUR)</label>
+                <div class="range-row">
+                    <input type="text" placeholder="Od">
+                    <input type="text" placeholder="Do">
+                </div>
+                <label>Godište</label>
+                <div class="range-row">
+                    <input type="text" placeholder="Od">
+                    <input type="text" placeholder="Do">
+                </div>
+                <label>Kilometraža</label>
+                <div class="range-row">
+                    <input type="text" placeholder="Od km">
+                    <input type="text" placeholder="Do km">
+                </div>
+                <label>Gorivo</label>
+                <select><option>Sve</option><option>Dizel</option><option>Benzin</option><option>Hibrid</option></select>
+                <label>Menjač</label>
+                <select><option>Sve</option><option>Manuelni</option><option>Automatik</option><option>DSG</option></select>
+                <button class="btn-primeni">Primeni filtere</button>
+            </div>
+        </aside>
+
+        <!-- OGLASI -->
+        <main class="oglasi-wrap">
+            <div class="oglasi-header">
+                <span><strong id="brOglasa">2</strong> oglasa pronađeno</span>
+                <select class="sort-select">
+                    <option>Sortiraj: Najnoviji</option>
+                    <option>Cena rastuće</option>
+                    <option>Cena opadajuće</option>
+                </select>
+            </div>
+
+            <div class="oglasi-lista" id="automobili">
+                <!-- POCETAK_AUTOMOBILA -->
+                <div class="oglas-kartica">
+  <div class="oglas-slika">&#128663;<div class="oglas-slika-marka">Opel</div></div>
+  <div class="oglas-info">
+    <div class="oglas-naslov">Opel Insignia 2012</div>
+    <div class="oglas-specs">2012 · 146.238 km · Dizel · Automatik</div>
+    <div class="oglas-chips">
+      <span class="chip">Dizel</span>
+      <span class="chip">Automatik</span>
+      <span class="chip">Srebrna</span>
     </div>
+    <div class="oglas-lokacija">&#128205; Leskovac &nbsp;&middot;&nbsp; pre 8 dana</div>
   </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Opel</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Opel Astra J</div>
-    <div class="auto-cena">8.742 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2010</span>
-      <span class="chip">&#128204; 209.981 km</span>
-      <span class="chip">&#9981; Dizel</span>
-      <span class="chip">&#9881; Manuelni</span>
-      <span class="chip">&#127912; Siva</span>
+  <div class="oglas-cena-wrap">
+    <div>
+      <div class="oglas-cena">8.275 &euro;</div>
+      <div class="oglas-cena-rsd">968.175 RSD</div>
     </div>
-  </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Ford</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Ford Fiesta</div>
-    <div class="auto-cena">3.349 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2017</span>
-      <span class="chip">&#128204; 116.696 km</span>
-      <span class="chip">&#9981; Benzin</span>
-      <span class="chip">&#9881; Manuelni</span>
-      <span class="chip">&#127912; Crvena</span>
-    </div>
-  </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Nissan</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Nissan Qashqai II</div>
-    <div class="auto-cena">12.539 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2014</span>
-      <span class="chip">&#128204; 111.351 km</span>
-      <span class="chip">&#9981; Dizel</span>
-      <span class="chip">&#9881; Automatik</span>
-      <span class="chip">&#127912; Bela</span>
-    </div>
-  </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Opel</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Opel Mokka</div>
-    <div class="auto-cena">8.661 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2019</span>
-      <span class="chip">&#128204; 139.762 km</span>
-      <span class="chip">&#9981; Dizel</span>
-      <span class="chip">&#9881; Manuelni</span>
-      <span class="chip">&#127912; Crna</span>
-    </div>
-  </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Hyundai</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Hyundai i20</div>
-    <div class="auto-cena">4.858 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2010</span>
-      <span class="chip">&#128204; 133.643 km</span>
-      <span class="chip">&#9981; Benzin</span>
-      <span class="chip">&#9881; Manuelni</span>
-      <span class="chip">&#127912; Crvena</span>
-    </div>
-  </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Audi</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Audi Q5</div>
-    <div class="auto-cena">14.957 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2015</span>
-      <span class="chip">&#128204; 151.705 km</span>
-      <span class="chip">&#9981; Dizel</span>
-      <span class="chip">&#9881; Automatik</span>
-      <span class="chip">&#127912; Siva</span>
-    </div>
-  </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Opel</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Opel Astra H</div>
-    <div class="auto-cena">3.080 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2010</span>
-      <span class="chip">&#128204; 205.012 km</span>
-      <span class="chip">&#9981; Dizel</span>
-      <span class="chip">&#9881; Manuelni</span>
-      <span class="chip">&#127912; Crvena</span>
-    </div>
-  </div>
-</div>
-            <div class="auto-kartica">
-  <div class="auto-slika-wrap"><span class="auto-emoji">&#128663;</span><span class="auto-label">Renault</span></div>
-  <div class="auto-info">
-    <div class="auto-naslov">Renault Clio 3</div>
-    <div class="auto-cena">3.656 &euro;</div>
-    <div class="auto-detalji">
-      <span class="chip">&#128197; 2007</span>
-      <span class="chip">&#128204; 196.106 km</span>
-      <span class="chip">&#9981; Benzin</span>
-      <span class="chip">&#9881; Manuelni</span>
-      <span class="chip">&#127912; Plava</span>
-    </div>
+    <button class="oglas-btn">Pogledaj</button>
   </div>
 </div>
             <!-- KRAJ_AUTOMOBILA -->
-        </div>
-    </section>
+            </div>
+        </main>
 
+    </div>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>&#169; 2026 Polovni Automobil. Sva prava zadrzana.</p>
+        <div class="footer-cols">
+            <div>
+                <strong>Polovni Automobil</strong>
+                <p>Najveći auto oglas u regionu</p>
+            </div>
+            <div>
+                <strong>Navigacija</strong>
+                <p>Automobili · Motocikli · Kamioni</p>
+            </div>
+            <div>
+                <strong>Kontakt</strong>
+                <p>info@polovniauto.rs</p>
+            </div>
+        </div>
+        <div class="footer-copy">&#169; 2026 Polovni Automobil. Sva prava zadržana.</div>
     </footer>
 
     <script>
-        var br = document.querySelectorAll('.auto-kartica').length;
+        var br = document.querySelectorAll('.oglas-kartica').length;
         document.getElementById('brOglasa').textContent = br;
     </script>
 </body>
