@@ -124,6 +124,12 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function randCena(min, max) {
+    var korak = 100;
+    var vrednost = rand(min, max);
+    return Math.round(vrednost / korak) * korak;
+}
+
 function git(komanda) {
     exec(komanda, { cwd: FOLDER });
 }
@@ -145,7 +151,7 @@ function sacuvajProgres(p) {
 function napraviKarticu(auto) {
     var godiste  = rand(auto.g[0],   auto.g[1]);
     var km       = rand(auto.km[0],  auto.km[1]);
-    var cena     = rand(auto.cena[0],auto.cena[1]);
+    var cena     = randCena(auto.cena[0],auto.cena[1]);
     var kmFmt    = km.toLocaleString('de-DE');
     var cenaFmt  = cena.toLocaleString('de-DE');
     var cenaRsd  = (cena * 117).toLocaleString('de-DE');
